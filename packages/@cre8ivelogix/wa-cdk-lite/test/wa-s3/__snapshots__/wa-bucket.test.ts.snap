@@ -1,0 +1,1667 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Default Well Architected S3 Bucket Configurations Bucket encryption status should be {"ServerSideEncryptionConfiguration": [Array]} when KMS 1`] = `
+Object {
+  "Resources": Object {
+    "MyBucket4xxErrorsAlarmA0A46AC8": Object {
+      "Properties": Object {
+        "AlarmDescription": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              "S3 4xxError Rate Alarm for Bucket ",
+              Object {
+                "Ref": "MyBucketF68F3FF0",
+              },
+            ],
+          ],
+        },
+        "AlarmName": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              Object {
+                "Ref": "MyBucketF68F3FF0",
+              },
+              "4xxErrorsAlarm",
+            ],
+          ],
+        },
+        "ComparisonOperator": "GreaterThanThreshold",
+        "EvaluationPeriods": 5,
+        "MetricName": "4xxErrors",
+        "Namespace": "AWS/S3",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Threshold": 1,
+      },
+      "Type": "AWS::CloudWatch::Alarm",
+    },
+    "MyBucket5xxErrorsAlarm8F8492EA": Object {
+      "Properties": Object {
+        "AlarmDescription": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              "S3 5xxError Rate Alarm for Bucket ",
+              Object {
+                "Ref": "MyBucketF68F3FF0",
+              },
+            ],
+          ],
+        },
+        "AlarmName": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              Object {
+                "Ref": "MyBucketF68F3FF0",
+              },
+              "5xxErrorsAlarm",
+            ],
+          ],
+        },
+        "ComparisonOperator": "GreaterThanThreshold",
+        "EvaluationPeriods": 5,
+        "MetricName": "5xxErrors",
+        "Namespace": "AWS/S3",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Threshold": 1,
+      },
+      "Type": "AWS::CloudWatch::Alarm",
+    },
+    "MyBucketF68F3FF0": Object {
+      "DeletionPolicy": "Retain",
+      "Properties": Object {
+        "BucketEncryption": Object {
+          "ServerSideEncryptionConfiguration": Array [
+            Object {
+              "ServerSideEncryptionByDefault": Object {
+                "KMSMasterKeyID": Object {
+                  "Fn::GetAtt": Array [
+                    "MyBucketKeyC17130CF",
+                    "Arn",
+                  ],
+                },
+                "SSEAlgorithm": "aws:kms",
+              },
+            },
+          ],
+        },
+        "PublicAccessBlockConfiguration": Object {
+          "BlockPublicAcls": true,
+          "BlockPublicPolicy": true,
+          "IgnorePublicAcls": true,
+          "RestrictPublicBuckets": true,
+        },
+      },
+      "Type": "AWS::S3::Bucket",
+      "UpdateReplacePolicy": "Retain",
+    },
+    "MyBucketKeyC17130CF": Object {
+      "DeletionPolicy": "Retain",
+      "Properties": Object {
+        "Description": "Created by TestStack/MyBucket",
+        "KeyPolicy": Object {
+          "Statement": Array [
+            Object {
+              "Action": "kms:*",
+              "Effect": "Allow",
+              "Principal": Object {
+                "AWS": Object {
+                  "Fn::Join": Array [
+                    "",
+                    Array [
+                      "arn:",
+                      Object {
+                        "Ref": "AWS::Partition",
+                      },
+                      ":iam::",
+                      Object {
+                        "Ref": "AWS::AccountId",
+                      },
+                      ":root",
+                    ],
+                  ],
+                },
+              },
+              "Resource": "*",
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+      },
+      "Type": "AWS::KMS::Key",
+      "UpdateReplacePolicy": "Retain",
+    },
+    "MyBucketPolicyE7FBAC7B": Object {
+      "Properties": Object {
+        "Bucket": Object {
+          "Ref": "MyBucketF68F3FF0",
+        },
+        "PolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": "s3:*",
+              "Condition": Object {
+                "Bool": Object {
+                  "aws:SecureTransport": "false",
+                },
+              },
+              "Effect": "Deny",
+              "Principal": Object {
+                "AWS": "*",
+              },
+              "Resource": Array [
+                Object {
+                  "Fn::GetAtt": Array [
+                    "MyBucketF68F3FF0",
+                    "Arn",
+                  ],
+                },
+                Object {
+                  "Fn::Join": Array [
+                    "",
+                    Array [
+                      Object {
+                        "Fn::GetAtt": Array [
+                          "MyBucketF68F3FF0",
+                          "Arn",
+                        ],
+                      },
+                      "/*",
+                    ],
+                  ],
+                },
+              ],
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+      },
+      "Type": "AWS::S3::BucketPolicy",
+    },
+  },
+}
+`;
+
+exports[`Default Well Architected S3 Bucket Configurations Bucket encryption status should be {"ServerSideEncryptionConfiguration": [Array]} when null 1`] = `
+Object {
+  "Resources": Object {
+    "MyBucket4xxErrorsAlarmA0A46AC8": Object {
+      "Properties": Object {
+        "AlarmDescription": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              "S3 4xxError Rate Alarm for Bucket ",
+              Object {
+                "Ref": "MyBucketF68F3FF0",
+              },
+            ],
+          ],
+        },
+        "AlarmName": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              Object {
+                "Ref": "MyBucketF68F3FF0",
+              },
+              "4xxErrorsAlarm",
+            ],
+          ],
+        },
+        "ComparisonOperator": "GreaterThanThreshold",
+        "EvaluationPeriods": 5,
+        "MetricName": "4xxErrors",
+        "Namespace": "AWS/S3",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Threshold": 1,
+      },
+      "Type": "AWS::CloudWatch::Alarm",
+    },
+    "MyBucket5xxErrorsAlarm8F8492EA": Object {
+      "Properties": Object {
+        "AlarmDescription": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              "S3 5xxError Rate Alarm for Bucket ",
+              Object {
+                "Ref": "MyBucketF68F3FF0",
+              },
+            ],
+          ],
+        },
+        "AlarmName": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              Object {
+                "Ref": "MyBucketF68F3FF0",
+              },
+              "5xxErrorsAlarm",
+            ],
+          ],
+        },
+        "ComparisonOperator": "GreaterThanThreshold",
+        "EvaluationPeriods": 5,
+        "MetricName": "5xxErrors",
+        "Namespace": "AWS/S3",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Threshold": 1,
+      },
+      "Type": "AWS::CloudWatch::Alarm",
+    },
+    "MyBucketF68F3FF0": Object {
+      "DeletionPolicy": "Retain",
+      "Properties": Object {
+        "BucketEncryption": Object {
+          "ServerSideEncryptionConfiguration": Array [
+            Object {
+              "ServerSideEncryptionByDefault": Object {
+                "SSEAlgorithm": "AES256",
+              },
+            },
+          ],
+        },
+        "PublicAccessBlockConfiguration": Object {
+          "BlockPublicAcls": true,
+          "BlockPublicPolicy": true,
+          "IgnorePublicAcls": true,
+          "RestrictPublicBuckets": true,
+        },
+      },
+      "Type": "AWS::S3::Bucket",
+      "UpdateReplacePolicy": "Retain",
+    },
+    "MyBucketPolicyE7FBAC7B": Object {
+      "Properties": Object {
+        "Bucket": Object {
+          "Ref": "MyBucketF68F3FF0",
+        },
+        "PolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": "s3:*",
+              "Condition": Object {
+                "Bool": Object {
+                  "aws:SecureTransport": "false",
+                },
+              },
+              "Effect": "Deny",
+              "Principal": Object {
+                "AWS": "*",
+              },
+              "Resource": Array [
+                Object {
+                  "Fn::GetAtt": Array [
+                    "MyBucketF68F3FF0",
+                    "Arn",
+                  ],
+                },
+                Object {
+                  "Fn::Join": Array [
+                    "",
+                    Array [
+                      Object {
+                        "Fn::GetAtt": Array [
+                          "MyBucketF68F3FF0",
+                          "Arn",
+                        ],
+                      },
+                      "/*",
+                    ],
+                  ],
+                },
+              ],
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+      },
+      "Type": "AWS::S3::BucketPolicy",
+    },
+  },
+}
+`;
+
+exports[`Default Well Architected S3 Bucket Configurations Bucket encryption status should be {"ServerSideEncryptionConfiguration": [Array]} when undefined 1`] = `
+Object {
+  "Resources": Object {
+    "MyBucket4xxErrorsAlarmA0A46AC8": Object {
+      "Properties": Object {
+        "AlarmDescription": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              "S3 4xxError Rate Alarm for Bucket ",
+              Object {
+                "Ref": "MyBucketF68F3FF0",
+              },
+            ],
+          ],
+        },
+        "AlarmName": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              Object {
+                "Ref": "MyBucketF68F3FF0",
+              },
+              "4xxErrorsAlarm",
+            ],
+          ],
+        },
+        "ComparisonOperator": "GreaterThanThreshold",
+        "EvaluationPeriods": 5,
+        "MetricName": "4xxErrors",
+        "Namespace": "AWS/S3",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Threshold": 1,
+      },
+      "Type": "AWS::CloudWatch::Alarm",
+    },
+    "MyBucket5xxErrorsAlarm8F8492EA": Object {
+      "Properties": Object {
+        "AlarmDescription": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              "S3 5xxError Rate Alarm for Bucket ",
+              Object {
+                "Ref": "MyBucketF68F3FF0",
+              },
+            ],
+          ],
+        },
+        "AlarmName": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              Object {
+                "Ref": "MyBucketF68F3FF0",
+              },
+              "5xxErrorsAlarm",
+            ],
+          ],
+        },
+        "ComparisonOperator": "GreaterThanThreshold",
+        "EvaluationPeriods": 5,
+        "MetricName": "5xxErrors",
+        "Namespace": "AWS/S3",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Threshold": 1,
+      },
+      "Type": "AWS::CloudWatch::Alarm",
+    },
+    "MyBucketF68F3FF0": Object {
+      "DeletionPolicy": "Retain",
+      "Properties": Object {
+        "BucketEncryption": Object {
+          "ServerSideEncryptionConfiguration": Array [
+            Object {
+              "ServerSideEncryptionByDefault": Object {
+                "SSEAlgorithm": "AES256",
+              },
+            },
+          ],
+        },
+        "PublicAccessBlockConfiguration": Object {
+          "BlockPublicAcls": true,
+          "BlockPublicPolicy": true,
+          "IgnorePublicAcls": true,
+          "RestrictPublicBuckets": true,
+        },
+      },
+      "Type": "AWS::S3::Bucket",
+      "UpdateReplacePolicy": "Retain",
+    },
+    "MyBucketPolicyE7FBAC7B": Object {
+      "Properties": Object {
+        "Bucket": Object {
+          "Ref": "MyBucketF68F3FF0",
+        },
+        "PolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": "s3:*",
+              "Condition": Object {
+                "Bool": Object {
+                  "aws:SecureTransport": "false",
+                },
+              },
+              "Effect": "Deny",
+              "Principal": Object {
+                "AWS": "*",
+              },
+              "Resource": Array [
+                Object {
+                  "Fn::GetAtt": Array [
+                    "MyBucketF68F3FF0",
+                    "Arn",
+                  ],
+                },
+                Object {
+                  "Fn::Join": Array [
+                    "",
+                    Array [
+                      Object {
+                        "Fn::GetAtt": Array [
+                          "MyBucketF68F3FF0",
+                          "Arn",
+                        ],
+                      },
+                      "/*",
+                    ],
+                  ],
+                },
+              ],
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+      },
+      "Type": "AWS::S3::BucketPolicy",
+    },
+  },
+}
+`;
+
+exports[`Default Well Architected S3 Bucket Configurations Bucket encryption status should be {"ServerSideEncryptionConfiguration": [Array]}[0].ServerSideEncryptionByDefault when KMS 1`] = `
+Object {
+  "Resources": Object {
+    "MyBucket4xxErrorsAlarmA0A46AC8": Object {
+      "Properties": Object {
+        "AlarmDescription": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              "S3 4xxError Rate Alarm for Bucket ",
+              Object {
+                "Ref": "MyBucketF68F3FF0",
+              },
+            ],
+          ],
+        },
+        "AlarmName": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              Object {
+                "Ref": "MyBucketF68F3FF0",
+              },
+              "4xxErrorsAlarm",
+            ],
+          ],
+        },
+        "ComparisonOperator": "GreaterThanThreshold",
+        "EvaluationPeriods": 5,
+        "MetricName": "4xxErrors",
+        "Namespace": "AWS/S3",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Threshold": 1,
+      },
+      "Type": "AWS::CloudWatch::Alarm",
+    },
+    "MyBucket5xxErrorsAlarm8F8492EA": Object {
+      "Properties": Object {
+        "AlarmDescription": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              "S3 5xxError Rate Alarm for Bucket ",
+              Object {
+                "Ref": "MyBucketF68F3FF0",
+              },
+            ],
+          ],
+        },
+        "AlarmName": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              Object {
+                "Ref": "MyBucketF68F3FF0",
+              },
+              "5xxErrorsAlarm",
+            ],
+          ],
+        },
+        "ComparisonOperator": "GreaterThanThreshold",
+        "EvaluationPeriods": 5,
+        "MetricName": "5xxErrors",
+        "Namespace": "AWS/S3",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Threshold": 1,
+      },
+      "Type": "AWS::CloudWatch::Alarm",
+    },
+    "MyBucketF68F3FF0": Object {
+      "DeletionPolicy": "Retain",
+      "Properties": Object {
+        "BucketEncryption": Object {
+          "ServerSideEncryptionConfiguration": Array [
+            Object {
+              "ServerSideEncryptionByDefault": Object {
+                "KMSMasterKeyID": Object {
+                  "Fn::GetAtt": Array [
+                    "MyBucketKeyC17130CF",
+                    "Arn",
+                  ],
+                },
+                "SSEAlgorithm": "aws:kms",
+              },
+            },
+          ],
+        },
+        "PublicAccessBlockConfiguration": Object {
+          "BlockPublicAcls": true,
+          "BlockPublicPolicy": true,
+          "IgnorePublicAcls": true,
+          "RestrictPublicBuckets": true,
+        },
+      },
+      "Type": "AWS::S3::Bucket",
+      "UpdateReplacePolicy": "Retain",
+    },
+    "MyBucketKeyC17130CF": Object {
+      "DeletionPolicy": "Retain",
+      "Properties": Object {
+        "Description": "Created by TestStack/MyBucket",
+        "KeyPolicy": Object {
+          "Statement": Array [
+            Object {
+              "Action": "kms:*",
+              "Effect": "Allow",
+              "Principal": Object {
+                "AWS": Object {
+                  "Fn::Join": Array [
+                    "",
+                    Array [
+                      "arn:",
+                      Object {
+                        "Ref": "AWS::Partition",
+                      },
+                      ":iam::",
+                      Object {
+                        "Ref": "AWS::AccountId",
+                      },
+                      ":root",
+                    ],
+                  ],
+                },
+              },
+              "Resource": "*",
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+      },
+      "Type": "AWS::KMS::Key",
+      "UpdateReplacePolicy": "Retain",
+    },
+    "MyBucketPolicyE7FBAC7B": Object {
+      "Properties": Object {
+        "Bucket": Object {
+          "Ref": "MyBucketF68F3FF0",
+        },
+        "PolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": "s3:*",
+              "Condition": Object {
+                "Bool": Object {
+                  "aws:SecureTransport": "false",
+                },
+              },
+              "Effect": "Deny",
+              "Principal": Object {
+                "AWS": "*",
+              },
+              "Resource": Array [
+                Object {
+                  "Fn::GetAtt": Array [
+                    "MyBucketF68F3FF0",
+                    "Arn",
+                  ],
+                },
+                Object {
+                  "Fn::Join": Array [
+                    "",
+                    Array [
+                      Object {
+                        "Fn::GetAtt": Array [
+                          "MyBucketF68F3FF0",
+                          "Arn",
+                        ],
+                      },
+                      "/*",
+                    ],
+                  ],
+                },
+              ],
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+      },
+      "Type": "AWS::S3::BucketPolicy",
+    },
+  },
+}
+`;
+
+exports[`Default Well Architected S3 Bucket Configurations Bucket encryption status should be {"ServerSideEncryptionConfiguration": [Array]}[0].ServerSideEncryptionByDefault when null 1`] = `
+Object {
+  "Resources": Object {
+    "MyBucket4xxErrorsAlarmA0A46AC8": Object {
+      "Properties": Object {
+        "AlarmDescription": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              "S3 4xxError Rate Alarm for Bucket ",
+              Object {
+                "Ref": "MyBucketF68F3FF0",
+              },
+            ],
+          ],
+        },
+        "AlarmName": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              Object {
+                "Ref": "MyBucketF68F3FF0",
+              },
+              "4xxErrorsAlarm",
+            ],
+          ],
+        },
+        "ComparisonOperator": "GreaterThanThreshold",
+        "EvaluationPeriods": 5,
+        "MetricName": "4xxErrors",
+        "Namespace": "AWS/S3",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Threshold": 1,
+      },
+      "Type": "AWS::CloudWatch::Alarm",
+    },
+    "MyBucket5xxErrorsAlarm8F8492EA": Object {
+      "Properties": Object {
+        "AlarmDescription": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              "S3 5xxError Rate Alarm for Bucket ",
+              Object {
+                "Ref": "MyBucketF68F3FF0",
+              },
+            ],
+          ],
+        },
+        "AlarmName": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              Object {
+                "Ref": "MyBucketF68F3FF0",
+              },
+              "5xxErrorsAlarm",
+            ],
+          ],
+        },
+        "ComparisonOperator": "GreaterThanThreshold",
+        "EvaluationPeriods": 5,
+        "MetricName": "5xxErrors",
+        "Namespace": "AWS/S3",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Threshold": 1,
+      },
+      "Type": "AWS::CloudWatch::Alarm",
+    },
+    "MyBucketF68F3FF0": Object {
+      "DeletionPolicy": "Retain",
+      "Properties": Object {
+        "BucketEncryption": Object {
+          "ServerSideEncryptionConfiguration": Array [
+            Object {
+              "ServerSideEncryptionByDefault": Object {
+                "SSEAlgorithm": "AES256",
+              },
+            },
+          ],
+        },
+        "PublicAccessBlockConfiguration": Object {
+          "BlockPublicAcls": true,
+          "BlockPublicPolicy": true,
+          "IgnorePublicAcls": true,
+          "RestrictPublicBuckets": true,
+        },
+      },
+      "Type": "AWS::S3::Bucket",
+      "UpdateReplacePolicy": "Retain",
+    },
+    "MyBucketPolicyE7FBAC7B": Object {
+      "Properties": Object {
+        "Bucket": Object {
+          "Ref": "MyBucketF68F3FF0",
+        },
+        "PolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": "s3:*",
+              "Condition": Object {
+                "Bool": Object {
+                  "aws:SecureTransport": "false",
+                },
+              },
+              "Effect": "Deny",
+              "Principal": Object {
+                "AWS": "*",
+              },
+              "Resource": Array [
+                Object {
+                  "Fn::GetAtt": Array [
+                    "MyBucketF68F3FF0",
+                    "Arn",
+                  ],
+                },
+                Object {
+                  "Fn::Join": Array [
+                    "",
+                    Array [
+                      Object {
+                        "Fn::GetAtt": Array [
+                          "MyBucketF68F3FF0",
+                          "Arn",
+                        ],
+                      },
+                      "/*",
+                    ],
+                  ],
+                },
+              ],
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+      },
+      "Type": "AWS::S3::BucketPolicy",
+    },
+  },
+}
+`;
+
+exports[`Default Well Architected S3 Bucket Configurations Bucket encryption status should be {"ServerSideEncryptionConfiguration": [Array]}[0].ServerSideEncryptionByDefault when undefined 1`] = `
+Object {
+  "Resources": Object {
+    "MyBucket4xxErrorsAlarmA0A46AC8": Object {
+      "Properties": Object {
+        "AlarmDescription": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              "S3 4xxError Rate Alarm for Bucket ",
+              Object {
+                "Ref": "MyBucketF68F3FF0",
+              },
+            ],
+          ],
+        },
+        "AlarmName": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              Object {
+                "Ref": "MyBucketF68F3FF0",
+              },
+              "4xxErrorsAlarm",
+            ],
+          ],
+        },
+        "ComparisonOperator": "GreaterThanThreshold",
+        "EvaluationPeriods": 5,
+        "MetricName": "4xxErrors",
+        "Namespace": "AWS/S3",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Threshold": 1,
+      },
+      "Type": "AWS::CloudWatch::Alarm",
+    },
+    "MyBucket5xxErrorsAlarm8F8492EA": Object {
+      "Properties": Object {
+        "AlarmDescription": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              "S3 5xxError Rate Alarm for Bucket ",
+              Object {
+                "Ref": "MyBucketF68F3FF0",
+              },
+            ],
+          ],
+        },
+        "AlarmName": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              Object {
+                "Ref": "MyBucketF68F3FF0",
+              },
+              "5xxErrorsAlarm",
+            ],
+          ],
+        },
+        "ComparisonOperator": "GreaterThanThreshold",
+        "EvaluationPeriods": 5,
+        "MetricName": "5xxErrors",
+        "Namespace": "AWS/S3",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Threshold": 1,
+      },
+      "Type": "AWS::CloudWatch::Alarm",
+    },
+    "MyBucketF68F3FF0": Object {
+      "DeletionPolicy": "Retain",
+      "Properties": Object {
+        "BucketEncryption": Object {
+          "ServerSideEncryptionConfiguration": Array [
+            Object {
+              "ServerSideEncryptionByDefault": Object {
+                "SSEAlgorithm": "AES256",
+              },
+            },
+          ],
+        },
+        "PublicAccessBlockConfiguration": Object {
+          "BlockPublicAcls": true,
+          "BlockPublicPolicy": true,
+          "IgnorePublicAcls": true,
+          "RestrictPublicBuckets": true,
+        },
+      },
+      "Type": "AWS::S3::Bucket",
+      "UpdateReplacePolicy": "Retain",
+    },
+    "MyBucketPolicyE7FBAC7B": Object {
+      "Properties": Object {
+        "Bucket": Object {
+          "Ref": "MyBucketF68F3FF0",
+        },
+        "PolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": "s3:*",
+              "Condition": Object {
+                "Bool": Object {
+                  "aws:SecureTransport": "false",
+                },
+              },
+              "Effect": "Deny",
+              "Principal": Object {
+                "AWS": "*",
+              },
+              "Resource": Array [
+                Object {
+                  "Fn::GetAtt": Array [
+                    "MyBucketF68F3FF0",
+                    "Arn",
+                  ],
+                },
+                Object {
+                  "Fn::Join": Array [
+                    "",
+                    Array [
+                      Object {
+                        "Fn::GetAtt": Array [
+                          "MyBucketF68F3FF0",
+                          "Arn",
+                        ],
+                      },
+                      "/*",
+                    ],
+                  ],
+                },
+              ],
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+      },
+      "Type": "AWS::S3::BucketPolicy",
+    },
+  },
+}
+`;
+
+exports[`Default Well Architected S3 Bucket Configurations bucket auto delete objects should be null when false 1`] = `
+Object {
+  "Resources": Object {
+    "MyBucket4xxErrorsAlarmA0A46AC8": Object {
+      "Properties": Object {
+        "AlarmDescription": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              "S3 4xxError Rate Alarm for Bucket ",
+              Object {
+                "Ref": "MyBucketF68F3FF0",
+              },
+            ],
+          ],
+        },
+        "AlarmName": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              Object {
+                "Ref": "MyBucketF68F3FF0",
+              },
+              "4xxErrorsAlarm",
+            ],
+          ],
+        },
+        "ComparisonOperator": "GreaterThanThreshold",
+        "EvaluationPeriods": 5,
+        "MetricName": "4xxErrors",
+        "Namespace": "AWS/S3",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Threshold": 1,
+      },
+      "Type": "AWS::CloudWatch::Alarm",
+    },
+    "MyBucket5xxErrorsAlarm8F8492EA": Object {
+      "Properties": Object {
+        "AlarmDescription": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              "S3 5xxError Rate Alarm for Bucket ",
+              Object {
+                "Ref": "MyBucketF68F3FF0",
+              },
+            ],
+          ],
+        },
+        "AlarmName": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              Object {
+                "Ref": "MyBucketF68F3FF0",
+              },
+              "5xxErrorsAlarm",
+            ],
+          ],
+        },
+        "ComparisonOperator": "GreaterThanThreshold",
+        "EvaluationPeriods": 5,
+        "MetricName": "5xxErrors",
+        "Namespace": "AWS/S3",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Threshold": 1,
+      },
+      "Type": "AWS::CloudWatch::Alarm",
+    },
+    "MyBucketF68F3FF0": Object {
+      "DeletionPolicy": "Retain",
+      "Properties": Object {
+        "BucketEncryption": Object {
+          "ServerSideEncryptionConfiguration": Array [
+            Object {
+              "ServerSideEncryptionByDefault": Object {
+                "SSEAlgorithm": "AES256",
+              },
+            },
+          ],
+        },
+        "PublicAccessBlockConfiguration": Object {
+          "BlockPublicAcls": true,
+          "BlockPublicPolicy": true,
+          "IgnorePublicAcls": true,
+          "RestrictPublicBuckets": true,
+        },
+      },
+      "Type": "AWS::S3::Bucket",
+      "UpdateReplacePolicy": "Retain",
+    },
+    "MyBucketPolicyE7FBAC7B": Object {
+      "Properties": Object {
+        "Bucket": Object {
+          "Ref": "MyBucketF68F3FF0",
+        },
+        "PolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": "s3:*",
+              "Condition": Object {
+                "Bool": Object {
+                  "aws:SecureTransport": "false",
+                },
+              },
+              "Effect": "Deny",
+              "Principal": Object {
+                "AWS": "*",
+              },
+              "Resource": Array [
+                Object {
+                  "Fn::GetAtt": Array [
+                    "MyBucketF68F3FF0",
+                    "Arn",
+                  ],
+                },
+                Object {
+                  "Fn::Join": Array [
+                    "",
+                    Array [
+                      Object {
+                        "Fn::GetAtt": Array [
+                          "MyBucketF68F3FF0",
+                          "Arn",
+                        ],
+                      },
+                      "/*",
+                    ],
+                  ],
+                },
+              ],
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+      },
+      "Type": "AWS::S3::BucketPolicy",
+    },
+  },
+}
+`;
+
+exports[`Default Well Architected S3 Bucket Configurations bucket auto delete objects should be undefined when false 1`] = `
+Object {
+  "Resources": Object {
+    "MyBucket4xxErrorsAlarmA0A46AC8": Object {
+      "Properties": Object {
+        "AlarmDescription": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              "S3 4xxError Rate Alarm for Bucket ",
+              Object {
+                "Ref": "MyBucketF68F3FF0",
+              },
+            ],
+          ],
+        },
+        "AlarmName": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              Object {
+                "Ref": "MyBucketF68F3FF0",
+              },
+              "4xxErrorsAlarm",
+            ],
+          ],
+        },
+        "ComparisonOperator": "GreaterThanThreshold",
+        "EvaluationPeriods": 5,
+        "MetricName": "4xxErrors",
+        "Namespace": "AWS/S3",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Threshold": 1,
+      },
+      "Type": "AWS::CloudWatch::Alarm",
+    },
+    "MyBucket5xxErrorsAlarm8F8492EA": Object {
+      "Properties": Object {
+        "AlarmDescription": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              "S3 5xxError Rate Alarm for Bucket ",
+              Object {
+                "Ref": "MyBucketF68F3FF0",
+              },
+            ],
+          ],
+        },
+        "AlarmName": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              Object {
+                "Ref": "MyBucketF68F3FF0",
+              },
+              "5xxErrorsAlarm",
+            ],
+          ],
+        },
+        "ComparisonOperator": "GreaterThanThreshold",
+        "EvaluationPeriods": 5,
+        "MetricName": "5xxErrors",
+        "Namespace": "AWS/S3",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Threshold": 1,
+      },
+      "Type": "AWS::CloudWatch::Alarm",
+    },
+    "MyBucketF68F3FF0": Object {
+      "DeletionPolicy": "Retain",
+      "Properties": Object {
+        "BucketEncryption": Object {
+          "ServerSideEncryptionConfiguration": Array [
+            Object {
+              "ServerSideEncryptionByDefault": Object {
+                "SSEAlgorithm": "AES256",
+              },
+            },
+          ],
+        },
+        "PublicAccessBlockConfiguration": Object {
+          "BlockPublicAcls": true,
+          "BlockPublicPolicy": true,
+          "IgnorePublicAcls": true,
+          "RestrictPublicBuckets": true,
+        },
+      },
+      "Type": "AWS::S3::Bucket",
+      "UpdateReplacePolicy": "Retain",
+    },
+    "MyBucketPolicyE7FBAC7B": Object {
+      "Properties": Object {
+        "Bucket": Object {
+          "Ref": "MyBucketF68F3FF0",
+        },
+        "PolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": "s3:*",
+              "Condition": Object {
+                "Bool": Object {
+                  "aws:SecureTransport": "false",
+                },
+              },
+              "Effect": "Deny",
+              "Principal": Object {
+                "AWS": "*",
+              },
+              "Resource": Array [
+                Object {
+                  "Fn::GetAtt": Array [
+                    "MyBucketF68F3FF0",
+                    "Arn",
+                  ],
+                },
+                Object {
+                  "Fn::Join": Array [
+                    "",
+                    Array [
+                      Object {
+                        "Fn::GetAtt": Array [
+                          "MyBucketF68F3FF0",
+                          "Arn",
+                        ],
+                      },
+                      "/*",
+                    ],
+                  ],
+                },
+              ],
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+      },
+      "Type": "AWS::S3::BucketPolicy",
+    },
+  },
+}
+`;
+
+exports[`Default Well Architected S3 Bucket Configurations bucket public access should be {"BlockPublicAcls": true, "BlockPublicPolicy": true, "IgnorePublicAcls": true, "RestrictPublicBuckets": true} when null 1`] = `
+Object {
+  "Resources": Object {
+    "MyBucket4xxErrorsAlarmA0A46AC8": Object {
+      "Properties": Object {
+        "AlarmDescription": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              "S3 4xxError Rate Alarm for Bucket ",
+              Object {
+                "Ref": "MyBucketF68F3FF0",
+              },
+            ],
+          ],
+        },
+        "AlarmName": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              Object {
+                "Ref": "MyBucketF68F3FF0",
+              },
+              "4xxErrorsAlarm",
+            ],
+          ],
+        },
+        "ComparisonOperator": "GreaterThanThreshold",
+        "EvaluationPeriods": 5,
+        "MetricName": "4xxErrors",
+        "Namespace": "AWS/S3",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Threshold": 1,
+      },
+      "Type": "AWS::CloudWatch::Alarm",
+    },
+    "MyBucket5xxErrorsAlarm8F8492EA": Object {
+      "Properties": Object {
+        "AlarmDescription": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              "S3 5xxError Rate Alarm for Bucket ",
+              Object {
+                "Ref": "MyBucketF68F3FF0",
+              },
+            ],
+          ],
+        },
+        "AlarmName": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              Object {
+                "Ref": "MyBucketF68F3FF0",
+              },
+              "5xxErrorsAlarm",
+            ],
+          ],
+        },
+        "ComparisonOperator": "GreaterThanThreshold",
+        "EvaluationPeriods": 5,
+        "MetricName": "5xxErrors",
+        "Namespace": "AWS/S3",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Threshold": 1,
+      },
+      "Type": "AWS::CloudWatch::Alarm",
+    },
+    "MyBucketF68F3FF0": Object {
+      "DeletionPolicy": "Retain",
+      "Properties": Object {
+        "BucketEncryption": Object {
+          "ServerSideEncryptionConfiguration": Array [
+            Object {
+              "ServerSideEncryptionByDefault": Object {
+                "SSEAlgorithm": "AES256",
+              },
+            },
+          ],
+        },
+        "PublicAccessBlockConfiguration": Object {
+          "BlockPublicAcls": true,
+          "BlockPublicPolicy": true,
+          "IgnorePublicAcls": true,
+          "RestrictPublicBuckets": true,
+        },
+      },
+      "Type": "AWS::S3::Bucket",
+      "UpdateReplacePolicy": "Retain",
+    },
+    "MyBucketPolicyE7FBAC7B": Object {
+      "Properties": Object {
+        "Bucket": Object {
+          "Ref": "MyBucketF68F3FF0",
+        },
+        "PolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": "s3:*",
+              "Condition": Object {
+                "Bool": Object {
+                  "aws:SecureTransport": "false",
+                },
+              },
+              "Effect": "Deny",
+              "Principal": Object {
+                "AWS": "*",
+              },
+              "Resource": Array [
+                Object {
+                  "Fn::GetAtt": Array [
+                    "MyBucketF68F3FF0",
+                    "Arn",
+                  ],
+                },
+                Object {
+                  "Fn::Join": Array [
+                    "",
+                    Array [
+                      Object {
+                        "Fn::GetAtt": Array [
+                          "MyBucketF68F3FF0",
+                          "Arn",
+                        ],
+                      },
+                      "/*",
+                    ],
+                  ],
+                },
+              ],
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+      },
+      "Type": "AWS::S3::BucketPolicy",
+    },
+  },
+}
+`;
+
+exports[`Default Well Architected S3 Bucket Configurations bucket public access should be {"BlockPublicAcls": true, "BlockPublicPolicy": true, "IgnorePublicAcls": true, "RestrictPublicBuckets": true} when undefined 1`] = `
+Object {
+  "Resources": Object {
+    "MyBucket4xxErrorsAlarmA0A46AC8": Object {
+      "Properties": Object {
+        "AlarmDescription": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              "S3 4xxError Rate Alarm for Bucket ",
+              Object {
+                "Ref": "MyBucketF68F3FF0",
+              },
+            ],
+          ],
+        },
+        "AlarmName": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              Object {
+                "Ref": "MyBucketF68F3FF0",
+              },
+              "4xxErrorsAlarm",
+            ],
+          ],
+        },
+        "ComparisonOperator": "GreaterThanThreshold",
+        "EvaluationPeriods": 5,
+        "MetricName": "4xxErrors",
+        "Namespace": "AWS/S3",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Threshold": 1,
+      },
+      "Type": "AWS::CloudWatch::Alarm",
+    },
+    "MyBucket5xxErrorsAlarm8F8492EA": Object {
+      "Properties": Object {
+        "AlarmDescription": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              "S3 5xxError Rate Alarm for Bucket ",
+              Object {
+                "Ref": "MyBucketF68F3FF0",
+              },
+            ],
+          ],
+        },
+        "AlarmName": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              Object {
+                "Ref": "MyBucketF68F3FF0",
+              },
+              "5xxErrorsAlarm",
+            ],
+          ],
+        },
+        "ComparisonOperator": "GreaterThanThreshold",
+        "EvaluationPeriods": 5,
+        "MetricName": "5xxErrors",
+        "Namespace": "AWS/S3",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Threshold": 1,
+      },
+      "Type": "AWS::CloudWatch::Alarm",
+    },
+    "MyBucketF68F3FF0": Object {
+      "DeletionPolicy": "Retain",
+      "Properties": Object {
+        "BucketEncryption": Object {
+          "ServerSideEncryptionConfiguration": Array [
+            Object {
+              "ServerSideEncryptionByDefault": Object {
+                "SSEAlgorithm": "AES256",
+              },
+            },
+          ],
+        },
+        "PublicAccessBlockConfiguration": Object {
+          "BlockPublicAcls": true,
+          "BlockPublicPolicy": true,
+          "IgnorePublicAcls": true,
+          "RestrictPublicBuckets": true,
+        },
+      },
+      "Type": "AWS::S3::Bucket",
+      "UpdateReplacePolicy": "Retain",
+    },
+    "MyBucketPolicyE7FBAC7B": Object {
+      "Properties": Object {
+        "Bucket": Object {
+          "Ref": "MyBucketF68F3FF0",
+        },
+        "PolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": "s3:*",
+              "Condition": Object {
+                "Bool": Object {
+                  "aws:SecureTransport": "false",
+                },
+              },
+              "Effect": "Deny",
+              "Principal": Object {
+                "AWS": "*",
+              },
+              "Resource": Array [
+                Object {
+                  "Fn::GetAtt": Array [
+                    "MyBucketF68F3FF0",
+                    "Arn",
+                  ],
+                },
+                Object {
+                  "Fn::Join": Array [
+                    "",
+                    Array [
+                      Object {
+                        "Fn::GetAtt": Array [
+                          "MyBucketF68F3FF0",
+                          "Arn",
+                        ],
+                      },
+                      "/*",
+                    ],
+                  ],
+                },
+              ],
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+      },
+      "Type": "AWS::S3::BucketPolicy",
+    },
+  },
+}
+`;
+
+exports[`Default Well Architected S3 Bucket Configurations bucket public access should be {"BlockPublicAcls": true, "IgnorePublicAcls": true} when {"blockPublicAcls": true, "blockPublicPolicy": undefined, "ignorePublicAcls": true, "restrictPublicBuckets": undefined} 1`] = `
+Object {
+  "Resources": Object {
+    "MyBucket4xxErrorsAlarmA0A46AC8": Object {
+      "Properties": Object {
+        "AlarmDescription": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              "S3 4xxError Rate Alarm for Bucket ",
+              Object {
+                "Ref": "MyBucketF68F3FF0",
+              },
+            ],
+          ],
+        },
+        "AlarmName": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              Object {
+                "Ref": "MyBucketF68F3FF0",
+              },
+              "4xxErrorsAlarm",
+            ],
+          ],
+        },
+        "ComparisonOperator": "GreaterThanThreshold",
+        "EvaluationPeriods": 5,
+        "MetricName": "4xxErrors",
+        "Namespace": "AWS/S3",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Threshold": 1,
+      },
+      "Type": "AWS::CloudWatch::Alarm",
+    },
+    "MyBucket5xxErrorsAlarm8F8492EA": Object {
+      "Properties": Object {
+        "AlarmDescription": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              "S3 5xxError Rate Alarm for Bucket ",
+              Object {
+                "Ref": "MyBucketF68F3FF0",
+              },
+            ],
+          ],
+        },
+        "AlarmName": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              Object {
+                "Ref": "MyBucketF68F3FF0",
+              },
+              "5xxErrorsAlarm",
+            ],
+          ],
+        },
+        "ComparisonOperator": "GreaterThanThreshold",
+        "EvaluationPeriods": 5,
+        "MetricName": "5xxErrors",
+        "Namespace": "AWS/S3",
+        "Period": 300,
+        "Statistic": "Sum",
+        "Threshold": 1,
+      },
+      "Type": "AWS::CloudWatch::Alarm",
+    },
+    "MyBucketF68F3FF0": Object {
+      "DeletionPolicy": "Retain",
+      "Properties": Object {
+        "BucketEncryption": Object {
+          "ServerSideEncryptionConfiguration": Array [
+            Object {
+              "ServerSideEncryptionByDefault": Object {
+                "SSEAlgorithm": "AES256",
+              },
+            },
+          ],
+        },
+        "PublicAccessBlockConfiguration": Object {
+          "BlockPublicAcls": true,
+          "IgnorePublicAcls": true,
+        },
+      },
+      "Type": "AWS::S3::Bucket",
+      "UpdateReplacePolicy": "Retain",
+    },
+    "MyBucketPolicyE7FBAC7B": Object {
+      "Properties": Object {
+        "Bucket": Object {
+          "Ref": "MyBucketF68F3FF0",
+        },
+        "PolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": "s3:*",
+              "Condition": Object {
+                "Bool": Object {
+                  "aws:SecureTransport": "false",
+                },
+              },
+              "Effect": "Deny",
+              "Principal": Object {
+                "AWS": "*",
+              },
+              "Resource": Array [
+                Object {
+                  "Fn::GetAtt": Array [
+                    "MyBucketF68F3FF0",
+                    "Arn",
+                  ],
+                },
+                Object {
+                  "Fn::Join": Array [
+                    "",
+                    Array [
+                      Object {
+                        "Fn::GetAtt": Array [
+                          "MyBucketF68F3FF0",
+                          "Arn",
+                        ],
+                      },
+                      "/*",
+                    ],
+                  ],
+                },
+              ],
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+      },
+      "Type": "AWS::S3::BucketPolicy",
+    },
+  },
+}
+`;
