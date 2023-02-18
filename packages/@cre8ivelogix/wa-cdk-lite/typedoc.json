@@ -1,0 +1,9 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": ["./lib/index.ts"],
+  "out": "docs",
+  "excludeExternals": true,
+  "lightHighlightTheme": "light-plus",
+  "name": "Well Architected CDK - Lite",
+  "includeVersion": true
+}

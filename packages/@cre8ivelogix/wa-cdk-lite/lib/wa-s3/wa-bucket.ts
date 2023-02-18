@@ -4,17 +4,23 @@ import {Construct} from "constructs";
 import {Duration} from "aws-cdk-lib";
 import {Alarm, ComparisonOperator, Metric} from "aws-cdk-lib/aws-cloudwatch";
 
+/**
+ * Well Architected Bucket alarms
+ */
 export enum WaBucketAlarms {
     /**
-     * This enum is used to represent and alarm name for 4XX errors e.g. 404 Not Found
+     * This enum is used to represent an alarm name for 4XX errors e.g. 404 Not Found
      */
     FourxxErrorsAlarm = "4xxErrorsAlarm",
     /**
-     * This enum is used to represent and alarm name for 5XX errors e.g. 500 Internal Server Error
+     * This enum is used to represent an alarm name for 5XX errors e.g. 500 Internal Server Error
      */
     FivexxErrorsAlarm = "5xxErrorsAlarm",
 }
 
+/**
+ * Well Architected Bucket Properties
+ */
 export interface WaBucketProps extends s3.BucketProps {
     /**
      * This flag is used to skip the default alarms.
@@ -22,6 +28,40 @@ export interface WaBucketProps extends s3.BucketProps {
     readonly waDoNotAddDefaultAlarms?: boolean;
 }
 
+/**
+ * Well Architected S3 Bucket that uses S3_MANAGED encryption, enforces ssl, denies public access
+ * is versioned, and uses CloudFront distribution with bucket as origin.
+ *
+ * ### Default Alarms
+ * By default it is configured with FourxxErrorsAlarm and FivexxErrorsAlarm alarms.
+ *
+ * Note that in freemium version the default alarm does not have any action. However, in premium version
+ * it uses the Well Architected Alarm construct, which sets up an alarm action to notify the SNS
+ * Topic *AlarmEventsTopic* by default.
+ *
+ * @example Default Usage
+ * ```ts
+ * new WaBucket(this, "LogicalId", {});
+ * ```
+ *
+ * @example Custom Configuration
+ * ```ts
+ * new WaBucket(this, "LogicalId", {
+ *    enforceSSL: false
+ * });
+ * ```
+ *
+ * ### Compliance
+ * It addresses the following compliance requirements
+ * * Blocks public access
+ * > PCI, HIPAA, GDPR, APRA, MAS, NIST4
+ * * Bucket versioning enabled
+ * > PCI, APRA, MAS, NIST4
+ * * Only allow secure transport protocols
+ * > PCI, APRA, MAS, NIST4
+ * * Server side encryption
+ * > PCI, HIPAA, GDPR, APRA, MAS, NIST4
+ * */
 export class WaBucket extends s3.Bucket {
 
     constructor(scope: Construct, id: string, props: WaBucketProps) {
