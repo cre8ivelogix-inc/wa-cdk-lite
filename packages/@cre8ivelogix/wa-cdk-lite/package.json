@@ -1,6 +1,6 @@
 {
   "name": "@cre8ivelogix/wa-cdk-lite",
-  "version": "2.65.0",
+  "version": "2.66.0",
   "description": "Well Architected CDK Constructs - Lite",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -38,11 +38,11 @@
     "@types/babel__traverse": "7.18.2",
     "@types/jest": "^27.5.2",
     "@types/node": "10.17.27",
-    "@aws-cdk/assert": "2.65.0",
+    "@aws-cdk/assert": "2.66.0",
     "@types/prettier": "^2.7.2",
     "@typescript-eslint/eslint-plugin": "^5.3.1",
     "@typescript-eslint/parser": "^5.3.1",
-    "aws-cdk": "2.65.0",
+    "aws-cdk": "2.66.0",
     "eslint": "^8.2.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-cdk": "^1.4.0",
@@ -55,7 +55,7 @@
     "typescript": "^4.4.4"
   },
   "dependencies": {
-    "aws-cdk-lib": "2.65.0",
+    "aws-cdk-lib": "2.66.0",
     "constructs": "^10.0.0"
   }
 }
