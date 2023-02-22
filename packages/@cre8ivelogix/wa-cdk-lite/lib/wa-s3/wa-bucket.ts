@@ -11,11 +11,11 @@ export enum WaBucketAlarms {
     /**
      * This enum is used to represent an alarm name for 4XX errors e.g. 404 Not Found
      */
-    FourxxErrorsAlarm = "4xxErrorsAlarm",
+    FOURXX_ERRORS_ALARM = "4xxErrorsAlarm",
     /**
      * This enum is used to represent an alarm name for 5XX errors e.g. 500 Internal Server Error
      */
-    FivexxErrorsAlarm = "5xxErrorsAlarm",
+    FIVEXX_ERRORS_ALARM = "5xxErrorsAlarm",
 }
 
 /**
@@ -39,12 +39,14 @@ export interface WaBucketProps extends s3.BucketProps {
  * it uses the Well Architected Alarm construct, which sets up an alarm action to notify the SNS
  * Topic *AlarmEventsTopic* by default.
  *
- * @example Default Usage
+ * ##Example
+ * Default Usage
  * ```ts
  * new WaBucket(this, "LogicalId", {});
  * ```
  *
- * @example Custom Configuration
+ * ##Example
+ * Custom Configuration
  * ```ts
  * new WaBucket(this, "LogicalId", {
  *    enforceSSL: false
@@ -86,8 +88,8 @@ export class WaBucket extends s3.Bucket {
             period: Duration.minutes(5)
         });
 
-        new Alarm(this, WaBucketAlarms.FourxxErrorsAlarm, {
-            alarmName: `${this.bucketName + WaBucketAlarms.FourxxErrorsAlarm}`,
+        new Alarm(this, WaBucketAlarms.FOURXX_ERRORS_ALARM, {
+            alarmName: `${this.bucketName + WaBucketAlarms.FOURXX_ERRORS_ALARM}`,
             comparisonOperator: ComparisonOperator.GREATER_THAN_THRESHOLD,
             metric: error4xxMetric,
             alarmDescription: `S3 4xxError Rate Alarm for Bucket ${this.bucketName}`,
@@ -104,8 +106,8 @@ export class WaBucket extends s3.Bucket {
             period: Duration.minutes(5)
         });
 
-        new Alarm(this, WaBucketAlarms.FivexxErrorsAlarm, {
-            alarmName: `${this.bucketName + WaBucketAlarms.FivexxErrorsAlarm}`,
+        new Alarm(this, WaBucketAlarms.FIVEXX_ERRORS_ALARM, {
+            alarmName: `${this.bucketName + WaBucketAlarms.FIVEXX_ERRORS_ALARM}`,
             comparisonOperator: ComparisonOperator.GREATER_THAN_THRESHOLD,
             metric: error5xxMetric,
             alarmDescription:

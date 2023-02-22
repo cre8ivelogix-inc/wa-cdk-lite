@@ -51,6 +51,17 @@ new WaBucket(this, "MyBucket", {})
 The Bucket created using WaBucket by default satisfies various security and compliance requirements,
 checkout WaBucket class documentation for details.
 
+### Building Java/.Net/Python/Javascript Distribution
+```shell
+docker run -it --rm --entrypoint sh -v $(pwd)/wa-cdk-lite:/wa-cdk-lite jsii/superchain:1-buster-slim-node16
+```
+when docker prompt is shown,
+```shell
+cd wa-cdk-lite
+npm run package
+```
+This will cross compile the typescript construct to supported languages.
+
 ### Well Architected CDK Version Updates
 
 The version of all CDK packages are fixed to the same version. If an
