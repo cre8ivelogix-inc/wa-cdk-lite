@@ -1,1 +1,0 @@
- docker run -it --rm --entrypoint sh -v /Users/mstahir/Projects/OpenSource/wa-cdk-lite/packages/@cre8ivelogix/wa-cdk-lite:/wa-cdk-lite jsii/superchain:1-buster-slim-node16

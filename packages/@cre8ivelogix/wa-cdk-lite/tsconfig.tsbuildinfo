@@ -142,15 +142,15 @@
         "affectsGlobalScope": true
       },
       "./node_modules/constructs/lib/dependency.d.ts": {
-        "version": "f2a22a142d46ff605b647aa6dd562d020e65161fe7750f794f0ebd7620cd8c38",
+        "version": "b8936446ed2b552611e05de95881b64a4704ba003aac44ba21b4b18ddf1e98e6",
         "affectsGlobalScope": false
       },
       "./node_modules/constructs/lib/metadata.d.ts": {
-        "version": "672eb0c04f2d035831081c3eef7bc199aa1fce4cae15113debf12917aa8ebe2a",
+        "version": "d89b0d88d62df2b051eb3a8be576e8d772ab54b4e4757f45f5f86fdbeea64954",
         "affectsGlobalScope": false
       },
       "./node_modules/constructs/lib/construct.d.ts": {
-        "version": "fb917edf29f26f91da35e1e9e4fe487de6bc97b2f9787253ba390fa5015ef428",
+        "version": "8dd56e05e1d06d44eb18b60e230f5ef0da4ba1aa57308ccd7a3a7f90179ec8b2",
         "affectsGlobalScope": false
       },
       "./node_modules/constructs/lib/index.d.ts": {
@@ -6378,75 +6378,15 @@
         "affectsGlobalScope": false
       },
       "./lib/wa-s3/wa-bucket.ts": {
-        "version": "0c9dcb34728916cc825c3ce21880f69b35c69f06243e3afda3be72cf12375085",
+        "version": "6f588e8eda6c84c1da078be6bbdb94475bd30ef9375130c19fcf2e0d117fe005",
         "affectsGlobalScope": false
       },
       "./lib/index.ts": {
         "version": "3ee3bb681063cbd2f53ff0d24b5aa1efb6404cc6d31148accafae421d029077c",
         "affectsGlobalScope": false
       },
-      "./node_modules/@aws-cdk/assert/lib/assertions/match-template.d.ts": {
-        "version": "d8e6cceea54c1c7e6a34bd1f3167fcbccaa6c49061e8c2df804a40355088d4dd",
-        "affectsGlobalScope": false
-      },
-      "./node_modules/@aws-cdk/assert/lib/inspector.d.ts": {
-        "version": "a3ea8a34087dcaf931733b0434979aa57261cf620bab94cbdf2381c7faf2e0cd",
-        "affectsGlobalScope": false
-      },
-      "./node_modules/@aws-cdk/assert/lib/assertion.d.ts": {
-        "version": "e9404c8897d4aa5402aa15c00946506651aacdc05be93212a559016eee82a19b",
-        "affectsGlobalScope": false
-      },
-      "./node_modules/@aws-cdk/assert/lib/canonicalize-assets.d.ts": {
-        "version": "641f599517c4bad4fbeb8f30e27719ed266f6365253f5179bcf33ece623d6d70",
-        "affectsGlobalScope": false
-      },
-      "./node_modules/@aws-cdk/assert/lib/expect.d.ts": {
-        "version": "3a9e8ef23deec94c3a25cadc461147a218f1dab111e7a528facff514416c8c9e",
-        "affectsGlobalScope": false
-      },
-      "./node_modules/@aws-cdk/assert/lib/synth-utils.d.ts": {
-        "version": "f738ad7ae56405e2c4010966e9bd31da2c4a01aa44bde9d0b965621ff2402c35",
-        "affectsGlobalScope": false
-      },
-      "./node_modules/@aws-cdk/assert/lib/assertions/exist.d.ts": {
-        "version": "ea72dfc70b7b0fd4300db1109fdc398f97217b62a918d49d5eb959c54a620820",
-        "affectsGlobalScope": false
-      },
-      "./node_modules/@aws-cdk/assert/lib/assertions/have-output.d.ts": {
-        "version": "3ade34f24ea82caacc6cd66c87581d8a84b7e18b34849348564bf9220a935952",
-        "affectsGlobalScope": false
-      },
-      "./node_modules/@aws-cdk/assert/lib/assertions/have-resource.d.ts": {
-        "version": "11ebe443ffc67174c55a3439c66692bbdeef315d00c6b5527b4fb6e905fac96e",
-        "affectsGlobalScope": false
-      },
-      "./node_modules/@aws-cdk/assert/lib/assertions/have-resource-matchers.d.ts": {
-        "version": "927aa7101f56132cc60d672af6d554581d3ef1f845141ccc310c18bc37e062e8",
-        "affectsGlobalScope": false
-      },
-      "./node_modules/@aws-cdk/assert/lib/assertions/have-type.d.ts": {
-        "version": "958701e2956854c6b5105a447594eba50a6c2181e0644ea8f9c1ffcb919df93f",
-        "affectsGlobalScope": false
-      },
-      "./node_modules/@aws-cdk/assert/lib/assertions/and-assertion.d.ts": {
-        "version": "5f54b3c115e72a7eb2bf7d5a50faed7def097eaa181fccb8214763b58f48a868",
-        "affectsGlobalScope": false
-      },
-      "./node_modules/@aws-cdk/assert/lib/assertions/negated-assertion.d.ts": {
-        "version": "e46b2437e9c5e9a02e0f69101605780a2d510528ce72fd39a39d8a012367e2be",
-        "affectsGlobalScope": false
-      },
-      "./node_modules/@aws-cdk/assert/lib/assertions/count-resources.d.ts": {
-        "version": "9a25391aa2df74a404ee40d0aab72c0d995a30c0368cb3796e4a1d909f9b4d1d",
-        "affectsGlobalScope": false
-      },
-      "./node_modules/@aws-cdk/assert/lib/index.d.ts": {
-        "version": "e0aa83b7b8dd4f860502b424b548af2ffbf84d4b8af66414e758b9f0bdcf13da",
-        "affectsGlobalScope": false
-      },
-      "./test/wa-s3/wa-bucket.test.ts": {
-        "version": "b5ce0191a314330116253778b3f9c65057cc48b45b4bdde46f1625e32b87bbe3",
+      "./test/wa-s3/wa-bucket.test.d.ts": {
+        "version": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
         "affectsGlobalScope": false
       },
       "./node_modules/jsii/node_modules/typescript/lib/lib.es2020.d.ts": {
@@ -6953,106 +6893,6 @@
         "./node_modules/aws-cdk-lib/aws-s3/index.d.ts",
         "./node_modules/aws-cdk-lib/index.d.ts",
         "./node_modules/constructs/lib/index.d.ts"
-      ],
-      "./node_modules/@aws-cdk/assert/lib/assertion.d.ts": [
-        "./node_modules/@aws-cdk/assert/lib/inspector.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "./node_modules/@aws-cdk/assert/lib/assertions/and-assertion.d.ts": [
-        "./node_modules/@aws-cdk/assert/lib/assertion.d.ts",
-        "./node_modules/@aws-cdk/assert/lib/inspector.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "./node_modules/@aws-cdk/assert/lib/assertions/count-resources.d.ts": [
-        "./node_modules/@aws-cdk/assert/lib/assertion.d.ts",
-        "./node_modules/@aws-cdk/assert/lib/inspector.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "./node_modules/@aws-cdk/assert/lib/assertions/exist.d.ts": [
-        "./node_modules/@aws-cdk/assert/lib/assertion.d.ts",
-        "./node_modules/@aws-cdk/assert/lib/inspector.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "./node_modules/@aws-cdk/assert/lib/assertions/have-output.d.ts": [
-        "./node_modules/@aws-cdk/assert/lib/assertion.d.ts",
-        "./node_modules/@aws-cdk/assert/lib/inspector.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "./node_modules/@aws-cdk/assert/lib/assertions/have-resource-matchers.d.ts": [
-        "./node_modules/@aws-cdk/assert/lib/assertions/have-resource.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "./node_modules/@aws-cdk/assert/lib/assertions/have-resource.d.ts": [
-        "./node_modules/@aws-cdk/assert/lib/assertion.d.ts",
-        "./node_modules/@aws-cdk/assert/lib/inspector.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "./node_modules/@aws-cdk/assert/lib/assertions/have-type.d.ts": [
-        "./node_modules/@aws-cdk/assert/lib/assertion.d.ts",
-        "./node_modules/@aws-cdk/assert/lib/inspector.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "./node_modules/@aws-cdk/assert/lib/assertions/match-template.d.ts": [
-        "./node_modules/@aws-cdk/assert/lib/assertion.d.ts",
-        "./node_modules/@aws-cdk/assert/lib/inspector.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "./node_modules/@aws-cdk/assert/lib/assertions/negated-assertion.d.ts": [
-        "./node_modules/@aws-cdk/assert/lib/assertion.d.ts",
-        "./node_modules/@aws-cdk/assert/lib/inspector.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "./node_modules/@aws-cdk/assert/lib/canonicalize-assets.d.ts": [
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "./node_modules/@aws-cdk/assert/lib/expect.d.ts": [
-        "./node_modules/@aws-cdk/assert/lib/inspector.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/aws-cdk-lib/cx-api/index.d.ts",
-        "./node_modules/aws-cdk-lib/index.d.ts"
-      ],
-      "./node_modules/@aws-cdk/assert/lib/index.d.ts": [
-        "./node_modules/@aws-cdk/assert/lib/assertion.d.ts",
-        "./node_modules/@aws-cdk/assert/lib/assertions/and-assertion.d.ts",
-        "./node_modules/@aws-cdk/assert/lib/assertions/count-resources.d.ts",
-        "./node_modules/@aws-cdk/assert/lib/assertions/exist.d.ts",
-        "./node_modules/@aws-cdk/assert/lib/assertions/have-output.d.ts",
-        "./node_modules/@aws-cdk/assert/lib/assertions/have-resource-matchers.d.ts",
-        "./node_modules/@aws-cdk/assert/lib/assertions/have-resource.d.ts",
-        "./node_modules/@aws-cdk/assert/lib/assertions/have-type.d.ts",
-        "./node_modules/@aws-cdk/assert/lib/assertions/match-template.d.ts",
-        "./node_modules/@aws-cdk/assert/lib/assertions/negated-assertion.d.ts",
-        "./node_modules/@aws-cdk/assert/lib/canonicalize-assets.d.ts",
-        "./node_modules/@aws-cdk/assert/lib/expect.d.ts",
-        "./node_modules/@aws-cdk/assert/lib/inspector.d.ts",
-        "./node_modules/@aws-cdk/assert/lib/synth-utils.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "./node_modules/@aws-cdk/assert/lib/inspector.d.ts": [
-        "./node_modules/@aws-cdk/assert/lib/assertion.d.ts",
-        "./node_modules/@aws-cdk/assert/lib/assertions/match-template.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/aws-cdk-lib/cx-api/index.d.ts"
-      ],
-      "./node_modules/@aws-cdk/assert/lib/synth-utils.d.ts": [
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/aws-cdk-lib/cx-api/index.d.ts",
-        "./node_modules/aws-cdk-lib/index.d.ts"
       ],
       "./node_modules/@babel/parser/typings/babel-parser.d.ts": [
         "./node_modules/@babel/types/lib/index.d.ts",
@@ -19205,13 +19045,9 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "./test/wa-s3/wa-bucket.test.ts": [
-        "./lib/index.ts",
-        "./node_modules/@aws-cdk/assert/lib/index.d.ts",
+      "./test/wa-s3/wa-bucket.test.d.ts": [
         "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/aws-cdk-lib/aws-s3/index.d.ts",
-        "./node_modules/aws-cdk-lib/index.d.ts"
+        "./node_modules/@types/node/util.d.ts"
       ]
     },
     "exportedModulesMap": {},

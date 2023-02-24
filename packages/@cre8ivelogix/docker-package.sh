@@ -1,0 +1,1 @@
+docker run -it --rm --entrypoint sh -v $(pwd)/wa-cdk-lite:/wa-cdk-lite jsii/superchain:1-buster-slim-node16

@@ -3353,7 +3353,7 @@
   },
   "description": "Well Architected CDK Constructs - Lite",
   "homepage": "https://github.com/cre8ivelogix-inc",
-  "jsiiVersion": "1.75.0 (build 63bb957)",
+  "jsiiVersion": "1.75.0",
   "keywords": [
     "aws",
     "cdk",
@@ -3372,7 +3372,7 @@
   },
   "name": "@cre8ivelogix/wa-cdk-lite",
   "readme": {
-    "markdown": "\n# Well Architected CDK Lite\n\nThis package contains the Well Architected S3 Bucket - WABucket construct.\nWABucket constructs extend the Bucket construct provided by AWS CDK and\nconfigures them to satisfy the Well Architected pillars, like\nsecurity, reliability, performance, cost-effectiveness and operational-excellence.\nIf you would like to use premium version which offers 50+ Well Architected constructs\nfor most commonly used usecases please email info@cre8ivelogix.com\n\n\n## Create a CDK project\nTo try out Well Architected CDK Lite by itself you can create a new CDK project by running the following commands\n\n```shell\ncdk init app --language typescript\n```\n\nThis will create a bare bone CDK project.\n\n## Adding WA-CDK Lite dependency\nOpen CDK project in your favorite IDE, goto package.json file and add the WA-CDK-Lite dependency\n\n```json\n{\n   \"dependencies\": {\n      \"@cre8ivelogix/wa-cdk-lite\": \"CURRENT_VERSION\"\n   }\n}\n```\n\n## Install Dependencies\nOnce package.json file is updated, you can install the dependencies by running the following commands\n\n```shell\nnpm install\n```\n\n## Using Well Architected CDK constructs\nNow that you have all the constructs available from Well Architected CDK Lite,\nuse them just like any other class in typescript.\n\nFor example in the following code snippet we are using WaBucket from AWS-CDK-Lite package\n\n```ts\nimport {WaBucket} from \"./wa-bucket\";\n\nnew WaBucket(this, \"MyBucket\", {})\n```\n\nThe Bucket created using WaBucket by default satisfies various security and compliance requirements,\ncheckout WaBucket class documentation for details.\n\n### Well Architected CDK Version Updates\n\nThe version of all CDK packages are fixed to the same version. If an\nupgrade is desired, please make sure that all CDK packages are upgraded\nto the same version at the same time. Different versions of CDK mixed\nin the project may cause type incompatibilities.\n\n### Useful commands\n\n-  `npm run build` compile typescript to js\n-  `npm run watch` watch for changes and compile\n-  `npm run test` perform the jest unit tests\n-  `npm run build-test` builds and runs unit tests\n-  `npm run doc-gen` generate documentation\n-  `npm run pretty` runs prettier on source code\n"
+    "markdown": "\n# Well Architected CDK Lite\n\nThis package contains the Well Architected S3 Bucket - WABucket construct.\nWABucket constructs extend the Bucket construct provided by AWS CDK and\nconfigures them to satisfy the Well Architected pillars, like\nsecurity, reliability, performance, cost-effectiveness and operational-excellence.\nIf you would like to use premium version which offers 50+ Well Architected constructs\nfor most commonly used usecases please email info@cre8ivelogix.com\n\n\n## Create a CDK project\nTo try out Well Architected CDK Lite by itself you can create a new CDK project by running the following commands\n\n```shell\ncdk init app --language typescript\n```\n\nThis will create a bare bone CDK project.\n\n## Adding WA-CDK Lite dependency\nOpen CDK project in your favorite IDE, goto package.json file and add the WA-CDK-Lite dependency\n\n```json\n{\n   \"dependencies\": {\n      \"@cre8ivelogix/wa-cdk-lite\": \"CURRENT_VERSION\"\n   }\n}\n```\n\n## Install Dependencies\nOnce package.json file is updated, you can install the dependencies by running the following commands\n\n```shell\nnpm install\n```\n\n## Using Well Architected CDK constructs\nNow that you have all the constructs available from Well Architected CDK Lite,\nuse them just like any other class in typescript.\n\nFor example in the following code snippet we are using WaBucket from AWS-CDK-Lite package\n\n```ts\nimport {WaBucket} from \"./wa-bucket\";\n\nnew WaBucket(this, \"MyBucket\", {})\n```\n\nThe Bucket created using WaBucket by default satisfies various security and compliance requirements,\ncheckout WaBucket class documentation for details.\n\n### Building Java/.Net/Python/Javascript Distribution\n```shell\ndocker run -it --rm --entrypoint sh -v $(pwd)/wa-cdk-lite:/wa-cdk-lite jsii/superchain:1-buster-slim-node16\n```\n or you can run the script docker-package.sh, when docker prompt is shown,\n```shell\ncd wa-cdk-lite\nnpm run package\n```\nThis will cross compile the typescript construct to supported languages.\n\n### Well Architected CDK Version Updates\n\nThe version of all CDK packages are fixed to the same version. If an\nupgrade is desired, please make sure that all CDK packages are upgraded\nto the same version at the same time. Different versions of CDK mixed\nin the project may cause type incompatibilities.\n\n### Useful commands\n\n-  `npm run build` compile typescript to js\n-  `npm run watch` watch for changes and compile\n-  `npm run test` perform the jest unit tests\n-  `npm run build-test` builds and runs unit tests\n-  `npm run doc-gen` generate documentation\n-  `npm run pretty` runs prettier on source code\n"
   },
   "repository": {
     "directory": "packages/@cre8ivelogix/wa-cdk-lite",
@@ -3384,6 +3384,10 @@
     "dotnet": {
       "namespace": "WaCDKLite",
       "packageId": "WaCDKLite"
+    },
+    "go": {
+      "moduleName": "github.com/cre8ivelogix-inc",
+      "packageName": "wacdklite"
     },
     "java": {
       "maven": {
@@ -3405,14 +3409,14 @@
       "assembly": "@cre8ivelogix/wa-cdk-lite",
       "base": "aws-cdk-lib.aws_s3.Bucket",
       "docs": {
-        "remarks": "### Default Alarms\nBy default it is configured with FourxxErrorsAlarm and FivexxErrorsAlarm alarms.\n\nNote that in freemium version the default alarm does not have any action. However, in premium version\nit uses the Well Architected Alarm construct, which sets up an alarm action to notify the SNS\nTopic *AlarmEventsTopic* by default.\n\nexample Default Usage\n```ts\nnew WaBucket(this, \"LogicalId\", {});\n```\n\nexample Custom Configuration\n```ts\nnew WaBucket(this, \"LogicalId\", {\n    enforceSSL: false\n});\n```\n\n### Compliance\nIt addresses the following compliance requirements\n* Blocks public access\n> PCI, HIPAA, GDPR, APRA, MAS, NIST4\n* Bucket versioning enabled\n> PCI, APRA, MAS, NIST4\n* Only allow secure transport protocols\n> PCI, APRA, MAS, NIST4\n* Server side encryption\n> PCI, HIPAA, GDPR, APRA, MAS, NIST4",
+        "remarks": "### Default Alarms\nBy default it is configured with FourxxErrorsAlarm and FivexxErrorsAlarm alarms.\n\nNote that in freemium version the default alarm does not have any action. However, in premium version\nit uses the Well Architected Alarm construct, which sets up an alarm action to notify the SNS\nTopic *AlarmEventsTopic* by default.\n\n##Example\nDefault Usage\n```ts\nnew WaBucket(this, \"LogicalId\", {});\n```\n\n##Example\nCustom Configuration\n```ts\nnew WaBucket(this, \"LogicalId\", {\n    enforceSSL: false\n});\n```\n\n### Compliance\nIt addresses the following compliance requirements\n* Blocks public access\n> PCI, HIPAA, GDPR, APRA, MAS, NIST4\n* Bucket versioning enabled\n> PCI, APRA, MAS, NIST4\n* Only allow secure transport protocols\n> PCI, APRA, MAS, NIST4\n* Server side encryption\n> PCI, HIPAA, GDPR, APRA, MAS, NIST4",
         "summary": "Well Architected S3 Bucket that uses S3_MANAGED encryption, enforces ssl, denies public access is versioned, and uses CloudFront distribution with bucket as origin."
       },
       "fqn": "@cre8ivelogix/wa-cdk-lite.WaBucket",
       "initializer": {
         "locationInModule": {
           "filename": "lib/wa-s3/wa-bucket.ts",
-          "line": 67
+          "line": 69
         },
         "parameters": [
           {
@@ -3438,7 +3442,7 @@
       "kind": "class",
       "locationInModule": {
         "filename": "lib/wa-s3/wa-bucket.ts",
-        "line": 65
+        "line": 67
       },
       "name": "WaBucket",
       "symbolId": "lib/wa-s3/wa-bucket:WaBucket"
@@ -3508,6 +3512,6 @@
       "symbolId": "lib/wa-s3/wa-bucket:WaBucketProps"
     }
   },
-  "version": "2.66.0",
-  "fingerprint": "wIT9EihvrVeoamHTm47cgX6JP7yIU8B5jcZOoWZUKHk="
+  "version": "2.66.1",
+  "fingerprint": "GCFQYnT4vUhwXiTCjC1LmrJlh4UJSzS4XwHqv/g1Slo="
 }

@@ -1,6 +1,6 @@
 {
   "name": "@cre8ivelogix/wa-cdk-lite",
-  "version": "2.66.0",
+  "version": "2.66.1",
   "description": "Well Architected CDK Constructs - Lite",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -43,6 +43,8 @@
   "license": "MIT-0",
   "jsii": {
     "outdir": "dist",
+    "excludeTypescript": ["**/*.test.ts"],
+    "versionFormat": "short",
     "targets": {
       "python": {
         "distName": "wa-cdk-lite",
@@ -58,6 +60,10 @@
       "dotnet": {
         "namespace": "WaCDKLite",
         "packageId": "WaCDKLite"
+      },
+      "go": {
+        "moduleName": "github.com/cre8ivelogix-inc",
+        "packageName": "wacdklite"
       }
     }
   },
@@ -86,7 +92,7 @@
     "typescript": "^4.4.4",
     "jsii": "^1.75.0",
     "jsii-pacmak": "^1.75.0",
-    "jsii-release": "^0.2.519",
+    "publib": "^0.2.601",
     "aws-cdk-lib": "2.66.0",
     "constructs": "10.0.0"
   },
